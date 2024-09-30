@@ -41,7 +41,7 @@ source .venv/bin/activate
 The sample can then be executed with:
 
 ```shell
-python -m langchain_prompt_protection
+python -m langchain_prompt_protection "Give me information on John Smith."
 ```
 
 ## Usage
@@ -77,7 +77,11 @@ Options:
   --help                       Show this message and exit.
 ```
 
+Audit logs and the results of any redactions can be viewed at the
+[Secure Audit Log Viewer][].
+
 [Secure Audit Log]: https://pangea.cloud/docs/audit/
+[Secure Audit Log Viewer]: https://console.pangea.cloud/service/audit/logs
 [Redact]: https://pangea.cloud/docs/redact/
 [Domain Intel]: https://pangea.cloud/docs/domain-intel/
 [IP Intel]: https://pangea.cloud/docs/ip-intel/

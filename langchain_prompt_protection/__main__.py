@@ -112,7 +112,13 @@ def main(
     chain = (
         ChatPromptTemplate.from_messages([("user", "{input}")])
         | PangeaAuditRunnable(token=audit_token, domain=pangea_domain, config_id=audit_config_id)
-        | PangeaRedactRunnable(token=redact_token, domain=pangea_domain, config_id=redact_config_id)
+        | PangeaRedactRunnable(
+            token=redact_token,
+            domain=pangea_domain,
+            config_id=redact_config_id,
+            audit_token=audit_token,
+            audit_config_id=audit_config_id,
+        )
         | PangeaDomainIntelGuard(token=domain_intel_token, domain=pangea_domain)
         | PangeaIpIntelGuard(token=ip_intel_token, domain=pangea_domain)
         | PangeaUrlIntelGuard(token=url_intel_token, domain=pangea_domain)
