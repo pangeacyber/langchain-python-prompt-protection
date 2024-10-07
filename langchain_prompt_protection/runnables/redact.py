@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import override
+from typing import Any, override
 
 from langchain_core.messages import HumanMessage
 from langchain_core.prompt_values import ChatPromptValue, PromptValue
@@ -49,7 +49,7 @@ class PangeaRedactRunnable(RunnableSerializable[PromptValue, PromptValue]):
             )
 
     @override
-    def invoke(self, input: PromptValue, config: RunnableConfig | None = None) -> PromptValue:
+    def invoke(self, input: PromptValue, config: RunnableConfig | None = None, **kwargs: Any) -> PromptValue:
         # Retrieve latest human message.
         messages = input.to_messages()
         human_messages = [message for message in messages if isinstance(message, HumanMessage)]
