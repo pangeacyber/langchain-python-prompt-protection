@@ -14,6 +14,7 @@ LangChain app to capture and filter what users are sending to LLMs:
 - Python v3.12 or greater.
 - pip v24.2 or [uv][] v0.4.5.
 - A [Pangea account][Pangea signup] with all of the above services enabled.
+  - Note: For Domain Intel, you should also set a default provider.
 - An [OpenAI API key][OpenAI API keys].
 
 ## Setup
