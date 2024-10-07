@@ -1,7 +1,7 @@
-# langchain-python-prompt-protection
+# Prompt Protection for LangChain in Python
 
-An example CLI tool in Python that demonstrates how to integrate Pangea services
-into a LangChain app to capture and filter what users are sending to LLMs:
+An example CLI tool that demonstrates integrating Pangea services into a 
+LangChain app to capture and filter what users are sending to LLMs:
 
 - [Secure Audit Log][] — Create an event when a human prompt is received.
 - [Redact][] — Remove sensitive information from prompts.
@@ -75,6 +75,23 @@ Options:
                                `OPENAI_API_KEY` environment variable.
                                [required]
   --help                       Show this message and exit.
+```
+
+### Example Input
+
+```shell
+python -m langchain_prompt_protection "What do you know about Michael Jordan the basketball player?"
+```
+
+### Received by OpenAI
+
+```shell
+What do you know about **** the basketball player?
+```
+
+### Sample Output
+```shell
+It seems like you might have intended to mention a specific player but did not include their name. Could you please provide the name of the basketball player you are interested in? That way, I can give you more accurate and relevant information.
 ```
 
 Audit logs and the results of any redactions can be viewed at the
