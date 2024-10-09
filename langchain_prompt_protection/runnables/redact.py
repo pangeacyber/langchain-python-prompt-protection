@@ -53,12 +53,16 @@ class PangeaRedactRunnable(RunnableSerializable[PromptValue, PromptValue]):
         # Retrieve latest human message.
         messages = input.to_messages()
         human_messages = [message for message in messages if isinstance(message, HumanMessage)]
-        text = human_messages[-1].content
+        latest_human_message = human_messages[-1]
+        text = latest_human_message.content
         assert isinstance(text, str)
 
         # Redact any sensitive text.
         redacted = self._client.redact(text=text)
         assert redacted.result
+
+        if redacted.result.redacted_text:
+            latest_human_message.content = redacted.result.redacted_text
 
         # Log a redaction event if any redactions were made and a Secure Audit
         # Log client is configured.
@@ -68,4 +72,4 @@ class PangeaRedactRunnable(RunnableSerializable[PromptValue, PromptValue]):
             )
 
         # Replace the last human message with the redacted text.
-        return ChatPromptValue(messages=messages[:-1] + [HumanMessage(content=redacted.result.redacted_text or text)])
+        return ChatPromptValue(messages=messages)
