@@ -12,7 +12,7 @@ from pydantic import SecretStr
 
 __all__ = ["MaliciousUrlsError", "PangeaUrlIntelGuard"]
 
-URL_RE = r"https?://(?:[-\w.]|%[\da-fA-F]{2})+"
+URL_RE = r"https?://(?:[-\w.]|%[\da-fA-F]{2})+(?::\d+)?"
 
 
 class MaliciousUrlsError(RuntimeError):
