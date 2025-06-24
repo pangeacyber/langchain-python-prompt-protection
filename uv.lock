@@ -563,7 +563,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = ">=8.2.1" },
-    { name = "langchain", specifier = ">=0.3.25" },
+    { name = "langchain", specifier = ">=0.3.26" },
     { name = "langchain-openai", specifier = ">=0.3.24" },
     { name = "pangea-sdk", specifier = ">=6.1.1" },
     { name = "pydantic", specifier = ">=2.11.7" },
