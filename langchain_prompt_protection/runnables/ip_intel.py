@@ -57,7 +57,7 @@ class PangeaIpIntelGuard(RunnableSerializable[PromptValue, PromptValue]):
         # Check the reputation of each IP address.
         intel = self._client.reputation_bulk(ip_addresses)
         assert intel.result
-        if any(x.score >= self._threshold for x in intel.result.data.values()):
+        if any(x.score >= self._threshold for x in intel.result.data.values() if x.score is not None):
             raise MaliciousIpAddressesError("One or more IP addresses have a malice score above the threshold.")
 
         # Pass on the input unchanged.
