@@ -57,7 +57,7 @@ class PangeaDomainIntelGuard(RunnableSerializable[PromptValue, PromptValue]):
         # Check the reputation of each domain.
         intel = self._client.reputation_bulk(domains)
         assert intel.result
-        if any(x.score >= self._threshold for x in intel.result.data.values()):
+        if any(x.score >= self._threshold for x in intel.result.data.values() if x.score is not None):
             raise MaliciousDomainsError("One or more domains have a malice score above the threshold.")
 
         # Pass on the input unchanged.
