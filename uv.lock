@@ -676,7 +676,7 @@ requires-dist = [
     { name = "langchain", specifier = ">=0.3.27" },
     { name = "langchain-openai", specifier = ">=1.0.0" },
     { name = "pangea-sdk", specifier = ">=6.8.0" },
-    { name = "pydantic", specifier = ">=2.12.2" },
+    { name = "pydantic", specifier = ">=2.12.3" },
 ]
 
 [package.metadata.requires-dev]
