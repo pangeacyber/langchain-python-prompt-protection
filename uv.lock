@@ -640,16 +640,16 @@ wheels = [
 
 [[package]]
 name = "langchain-openai"
-version = "1.0.0"
+version = "1.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "langchain-core" },
     { name = "openai" },
     { name = "tiktoken" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/bc/16/e7f69c584432b33cec31d9e09ffc53b612cc971ba81739d1ff62bb84d5d8/langchain_openai-1.0.0.tar.gz", hash = "sha256:14b4f8e77e2ace62e390fe4824f08718b227ed86b476983ce4f0063fa258e966", size = 1023557, upload-time = "2025-10-17T15:43:22.308Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f1/50/eaa53ac18f63b3e92e6c3a30269714cff477af5a568f486254779a9973f1/langchain_openai-1.0.1.tar.gz", hash = "sha256:78aff09a631fccca08a64f5fc669b325d0f5821490acce024e5da4cf0a08e0d0", size = 1025305, upload-time = "2025-10-21T15:45:06.095Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/02/1f/0440b1bacc3dbfb8e34d9b478e3f3d333384f32ba6b753907b5ff9dc8c17/langchain_openai-1.0.0-py3-none-any.whl", hash = "sha256:e42b856ae53d2f6f3afd2ecb875056025d8c0b8f313a89fc66eb682c6b958111", size = 80465, upload-time = "2025-10-17T15:43:20.771Z" },
+    { url = "https://files.pythonhosted.org/packages/62/c0/06d74093e3e798eb464ef76f53d031235b87feccdadbbf6f7b8409043e4d/langchain_openai-1.0.1-py3-none-any.whl", hash = "sha256:9b61309a7268e7c1c614c554cfd66401519e7434aaefc52de7e251887aceb5f7", size = 81898, upload-time = "2025-10-21T15:45:04.957Z" },
 ]
 
 [[package]]
@@ -674,7 +674,7 @@ dev = [
 requires-dist = [
     { name = "click", specifier = ">=8.3.0" },
     { name = "langchain", specifier = ">=1.0.2" },
-    { name = "langchain-openai", specifier = ">=1.0.0" },
+    { name = "langchain-openai", specifier = ">=1.0.1" },
     { name = "pangea-sdk", specifier = ">=6.8.0" },
     { name = "pydantic", specifier = ">=2.12.3" },
 ]
